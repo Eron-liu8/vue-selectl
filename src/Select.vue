@@ -9,7 +9,7 @@
           </ul>
         </transition>
       </div>
-      <button type="button" @click.stop="showSelectDialog"><span>选择人员</span></button>
+      <button type="button" @click.stop="showSelectDialog"><span>选择人员111</span></button>
     </div>
     <select-dialog :model="model" :initCurLists="initData" :datas="datas" @hide="hide" @resetDatas="resetDatas" v-if="datas.name" :limit="limit"></select-dialog>
     <div class="cur-lists">
