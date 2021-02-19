@@ -2,14 +2,14 @@
   <div class="btn-show">
     <div class="search-box">
       <div class="search">
-        <input type="text" v-model="quickSearch" placeholder="支持快速搜索选择(支持拼音搜索名字)" @focus="isFocusSearch('focus')" @blur="isFocusSearch('blur')" @input="isFocusSearch('no')">
+        <input type="text" v-model="quickSearch" placeholder="支持快速搜索选择" @focus="isFocusSearch('focus')" @blur="isFocusSearch('blur')" @input="isFocusSearch('no')">
         <transition name="fade">
           <ul v-show="quickSearch && isSearch">
             <li v-for="item in filter(optionalLists, quickSearch)" :key="item.id" @click="chooseItem(item)">{{item.name}}<span v-if="item.englishName">({{item.englishName}})</span></li>
           </ul>
         </transition>
       </div>
-      <button type="button" @click.stop="showSelectDialog"><span>选择插件</span></button>
+      <button type="button" @click.stop="showSelectDialog"><span>选择人员</span></button>
     </div>
     <select-dialog :model="model" :initCurLists="initData" :datas="datas" @hide="hide" @resetDatas="resetDatas" v-if="datas.name" :limit="limit"></select-dialog>
     <div class="cur-lists">
